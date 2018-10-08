@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Asap+Condensed');
+
+body {
+  background-color: #fefefe;
+  font-weight: 100;
+  margin: 0;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+  font-weight: 100;
+}
+
+h3 {
+  font-weight: 100;
+}
+
+label {
+  text-align: left;
+}
+
+label span {
+  display: block;
+}
+
+input[type="text"], input[type="email"] {
+  display: block;
+  width: 97%;
+  height: 36px;
+  font-size: 18px;
+  line-height: 1.5;
+  border: 2px solid #000;
+  border-radius: 3px;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  -webkit-appearance: none;
+}
+
+input[type="submit"] {
+  font-size: 16px;
+  padding: 0.5em 1em;
+  height: 42px;
+  border-radius: 3px;
+  border: 2px solid #000;
+  margin-top: 1em;
+  transition: margin-top 0.75s;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  margin-top: 0.75em;
+  transition: margin-top 0.25s;
+}
+
+input:focus {
+  outline: none;
+}
+
+.margin-1-t {
+  margin-top: 1em;
+}
+
+.right {
+  text-align: right;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  font-family: 'Asap Condensed', sans-serif;
+}
+
+.app-container {
+  float: right;
+  width: 65vw;
+  min-height: 90vh;
+  padding: 2em;
+}
+
+.banner-container {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  text-align: center;
+  background-color: #fefefe;
+}
+
+.coming-soon-container {
+  background-image: url("../../images/tara_and_wade_banner_small.jpg");
+  width: 50%;
+  min-height: 60vh;
+  margin: 0 auto;
+  text-align: center;
+  padding: 25vh 4em;
+  color: #FFF;
+  transition: padding-top 1s;
+}
+
+.coming-soon-container-active {
+  background-image: url("../../images/tara_and_wade_banner_small.jpg");
+  width: 50%;
+  min-height: 75vh;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10vh 4em;
+  color: #FFF;
+  transition: padding-top 1s;
+}
+
+.coming-soon-container-active input {
+  border: 2px solid #FFF;
+  opacity: 80%;
+}
+
+.nav-container {
+  width: 25vw;
+  min-height: 90vh;
+  position: fixed;
+  padding: 1em;
+}
+
+.nav-container ul {
+  padding: 0;
+}
+
+.nav-container li {
+  list-style: none;
+  padding: 1em;
+  border-bottom: 1px solid;
+  cursor: pointer;
+}
+
+.nav-container li:hover {
+  font-weight: bold;
+}
+
+.nav-container li:first-child {
+  border-top: 1px solid;
+}
