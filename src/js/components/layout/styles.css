@@ -90,7 +90,7 @@ input:focus {
 }
 
 .coming-soon-container {
-  background-image: url("../../images/tara_and_wade_banner_small.jpg");
+  background-image: url("../../../images/tara_and_wade_banner_small.jpg");
   width: 50%;
   min-height: 60vh;
   margin: 0 auto;
@@ -101,7 +101,7 @@ input:focus {
 }
 
 .coming-soon-container-active {
-  background-image: url("../../images/tara_and_wade_banner_small.jpg");
+  background-image: url("../../../images/tara_and_wade_banner_small.jpg");
   width: 50%;
   min-height: 75vh;
   margin: 0 auto;

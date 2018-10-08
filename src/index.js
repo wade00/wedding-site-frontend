@@ -1,9 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
-import Layout from "./components/layout/Layout"
-import ComingSoon from "./components/layout/ComingSoon"
-import registerServiceWorker from './registerServiceWorker'
+import App from './js/App'
+import Layout from "./js/components/layout/Layout"
+import ComingSoon from "./js/components/layout/ComingSoon"
+import registerServiceWorker from './js/registerServiceWorker'
 
 const UNDER_CONSTRUCTION = true
 

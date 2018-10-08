@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 // import PropTypes from "prop-types"
 // import "./styles.css"
-import Hero from "../../images/tara_and_wade_banner.jpg"
+import Hero from "../../../images/tara_and_wade_banner.jpg"
 import "./styles.css"
 
 const propTypes = {}
