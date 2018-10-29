@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from "prop-types"
+import { ToastContainer } from 'react-toastify'
 import Navigation from "./Navigation"
+import Banner from './Banner'
+import 'react-toastify/dist/ReactToastify.css'
 import "./styles.css"
-import Banner from './Banner';
 
 const propTypes = {
   children: PropTypes.object.isRequired,
@@ -17,10 +19,11 @@ class Layout extends Component {
       <div className="container">
         <Banner message={message} />
         <div style={{ marginTop: message ? '2em' : '1em' }}>
+          <ToastContainer autoClose={false} className="toast" />
           {sideMenu ? (
             <Navigation message={message} />
           ) : null}
-          <div className={sideMenu ? "app-container" : ""}>
+          <div className={sideMenu ? 'app-container' : ""}>
             {children}
           </div>
         </div>

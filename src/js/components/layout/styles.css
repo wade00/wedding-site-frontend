@@ -52,8 +52,10 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  margin-top: 0.75em;
-  transition: margin-top 0.25s;
+  background-color: rgba(255,255,255, 0.8);
+  border: 2px solid rgba(255,255,255, 0.8);
+  color: #000;
+  transition: all 0.5s;
 }
 
 input:focus {
@@ -113,7 +115,9 @@ input:focus {
 
 .coming-soon-container-active input {
   border: 2px solid #FFF;
-  opacity: 80%;
+  background: rgba(0,0,0,0.2);
+  color: #FFF;
+  height: 50px;
 }
 
 .nav-container {
@@ -140,4 +144,16 @@ input:focus {
 
 .nav-container li:first-child {
   border-top: 1px solid;
+}
+
+.Toastify__toast--success {
+  border-radius: 4px !important;
+  background-color: #6ACD8A !important;
+  font-family: 'Asap Condensed', sans-serif !important;
+}
+
+.Toastify__toast--error {
+  border-radius: 4px !important;
+  background-color: #CA625F !important;
+  font-family: 'Asap Condensed', sans-serif !important;
 }

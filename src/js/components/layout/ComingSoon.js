@@ -1,5 +1,7 @@
 import React, { Component, Fragment } from 'react'
-import "./styles.css"
+import { toast } from "react-toastify"
+import { API } from '../../utils'
+import './styles.css'
 
 class ComingSoon extends Component {
   state = {
@@ -11,11 +13,7 @@ class ComingSoon extends Component {
 
   componentDidMount() {
     setTimeout(() => {
-      this.setState({ showEmailForm: true }, () => {
-        setTimeout(() => {
-          this.setState({ showMessage: true })
-        }, 1000)
-      })
+      this.setState({ showMessage: true, showEmailForm: true })
     }, 4000)
   }
  
@@ -25,20 +23,38 @@ class ComingSoon extends Component {
       <div className={showEmailForm ? "coming-soon-container-active" : "coming-soon-container"}>
         <h1>COMING SOON</h1>
         <h2>06.21.2019</h2>
-        <h3>{'👰 ❤️ 🤵'}</h3>
+        {showMessage ? (
+          <Fragment>
+            <p>
+              Enter your name and email and we'll send you a message when our site is up and running!
+                </p>
+            <p>Love,</p>
+            <p>
+              Tara & Wade
+            </p>
+          </Fragment>
+        ) : null}
         {showEmailForm ? (
           <Fragment>
-            <form>
+            <form onSubmit={this.handleSubmit}>
               <div className="margin-1-t">
                 <label>
                   <span>Your Name</span>
-                  <input type="text" onChange={this.handleNameChange} placeholder="First and Last Name" />
+                  <input
+                    type="text"
+                    onChange={this.handleNameChange}
+                    ref={el => this.nameInput = el}
+                  />
                 </label>
               </div>
               <div className="margin-1-t">
                 <label>
                   <span>Your Email</span>
-                  <input type="email" onChange={this.handleEmailChange} placeholder="Email Address" />
+                  <input
+                    type="email"
+                    onChange={this.handleEmailChange}
+                    ref={el => this.emailInput = el}
+                  />
                 </label>
               </div>
               <div className="right">
@@ -47,17 +63,6 @@ class ComingSoon extends Component {
                 ) : null}
               </div>
             </form>
-            {showMessage && !this.showSubmitButton() ? (
-              <Fragment>
-                <p>
-                  Enter your name and email and we'll send you a message when our site is up and running!
-                </p>
-                <p>Love,</p>
-                <p>
-                  Tara & Wade
-                </p>
-              </Fragment>
-            ) : null}
           </Fragment>
         ) : null}
       </div>
@@ -70,6 +75,22 @@ class ComingSoon extends Component {
   
   handleNameChange = ({ target: { value } }) => {
     this.setState({ namePresent: !!value })
+  }
+
+  handleSubmit = async e => {
+    e.preventDefault()
+    const { emailInput, nameInput } = this
+    const data = { email: emailInput.value, name: nameInput.value }
+    const res = await API.call("newSubscriber", data)
+    if (res.data && res.data.errors.length && res.data.errors.length) {
+      res.data.errors.map(err => (
+        toast.error(`Error: ${err.detail}`)
+      ))
+    } else {
+      toast.success("Info saved! We'll email you when we have an update 😎")
+      emailInput.value = ""
+      nameInput.value = ""
+    }
   }
 
   showSubmitButton = () => {
